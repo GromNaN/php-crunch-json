@@ -14,5 +14,13 @@
         "psr-4": {
             "GromNaN\\JsonCrunch\\": "src/"
         }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always --coverage-text"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
     }
 }

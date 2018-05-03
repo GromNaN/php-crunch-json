@@ -1,0 +1,21 @@
+language: php
+
+sudo: false
+
+cache:
+    directories:
+        - $HOME/.composer/cache/files
+
+php:
+    - 7.0
+    - 7.1
+    - 7.2
+
+before_install:
+    - if [[ $COVERAGE != true ]]; then phpenv config-rm xdebug.ini || true; fi
+
+install:
+    - travis_retry composer update --prefer-dist --no-interaction
+
+script:
+    - composer test
