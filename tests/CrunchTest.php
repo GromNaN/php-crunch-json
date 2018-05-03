@@ -112,7 +112,10 @@ class CrunchTest extends TestCase
      */
     public function testCrunch($description, $uncrunched, $crunched)
     {
-        $this->assertEquals($crunched, crunch($uncrunched));
+        $this->assertEquals(
+            json_encode($crunched, JSON_PRETTY_PRINT),
+            json_encode(crunch($uncrunched), JSON_PRETTY_PRINT)
+        );
     }
 
     /**
@@ -120,6 +123,9 @@ class CrunchTest extends TestCase
      */
     public function testUncrunch($description, $uncrunched, $crunched)
     {
-        $this->assertEquals($uncrunched, uncrunch($crunched));
+        $this->assertEquals(
+            json_encode($uncrunched, JSON_PRETTY_PRINT),
+            json_encode(uncrunch($crunched), JSON_PRETTY_PRINT)
+        );
     }
 }
