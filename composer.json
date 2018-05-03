@@ -1,0 +1,15 @@
+{
+    "name": "gromnan/json-crunch",
+    "description": "Optimizes JSON responses by minimizing duplication and improving compressibility.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jérôme TAMARELLE",
+            "email": "jerome@tamarelle.net"
+        }
+    ],
+    "autoload": {
+        "files": ["src/functions.php"]
+    }
+}
