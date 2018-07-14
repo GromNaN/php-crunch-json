@@ -18,6 +18,9 @@
     "scripts": {
         "test": "phpunit --colors=always --coverage-text"
     },
+    "bin": [
+        "bin/json-crunch"
+    ],
     "extra": {
         "branch-alias": {
             "dev-master": "0.1-dev"

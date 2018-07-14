@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+
+namespace GromNaN\JsonCrunch;
+
+require_once __DIR__.'/../src/Crunch.php';
+require_once __DIR__.'/../src/functions.php';
+
+if (2 !== count($argv)) {
+  echo <<<EOF
+Usage: {$argv[0]} <file>
+
+EOF;
+  exit(1);
+}
+
+$filename = $argv[1];
+if (!is_file($filename)) {
+  echo <<<EOF
+File not found.
+
+EOF;
+  exit(2);
+}
+
+$data = \json_decode(file_get_contents($filename), true);
+$data = crunch($data);
+
+echo "[\r\n    ";
+echo implode(",\r\n    ", array_map('json_encode', $data));
+echo "\r\n]\r\n";
+
+exit(0);

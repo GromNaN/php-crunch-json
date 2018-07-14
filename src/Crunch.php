@@ -24,7 +24,7 @@ class Crunch implements \JsonSerializable
 
     private function flatten($data)
     {
-        $flattened = is_array($data) ? array_map([$this, 'flatten'], $data) : $data;
+        $flattened = \is_array($data) ? \array_map([$this, 'flatten'], $data) : $data;
 
         return $this->insert($flattened);
     }
@@ -37,7 +37,7 @@ class Crunch implements \JsonSerializable
         $key = \json_encode($value);
 
         if (!\array_key_exists($key, $this->index)) {
-            $i = count($this->index);
+            $i = \count($this->index);
             $this->index[$key] = $i;
             $this->values[] = $value;
 
